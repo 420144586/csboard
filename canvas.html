@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #cs_board{
+    }
+</style>
+<body>
+    <canvas width="800" height="800" id="cs_board" ></canvas>
+    <button id="eraser_button">切换</button>
+
+</body>
+</html>
+<script>
+
+</script>
+<script type="module">
+    let currentTool = 'pen'
+    import csBoard from './board-demo.js'
+    document.getElementById('eraser_button').addEventListener('click', ()=> {
+
+        if(currentTool === 'pen') {
+            currentTool = 'eraser'
+        } else if(currentTool === 'eraser') {
+            currentTool = 'pen'
+        }
+        csBoard.switchTool(currentTool)
+
+    })
+
+</script>
